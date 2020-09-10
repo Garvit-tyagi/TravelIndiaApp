@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/homeBottom"
+    android:title="Home"
+    android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/states"
+        android:title="States"
+        android:icon="@drawable/ic_place_black_24dp"/>
+    <item
+        android:id="@+id/destinations"
+        android:title="Destinations"
+        android:icon="@drawable/ic_destinations"/>
+
+</menu>

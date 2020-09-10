@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".finalDisplay"
+    android:background="#fff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/detail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/detail_image"
+            android:textColor="#fff"
+            android:paddingLeft="8dp"
+            android:text="state name"
+            android:fontFamily="cursive"
+            android:textStyle="bold"
+            android:textSize="26sp" />
+    </RelativeLayout>
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Click to know more"
+    android:textColor="#000"
+    android:padding="4dp"/>
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="4dp"
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        android:background="#fff">
+        <LinearLayout
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff">
+
+            <ImageView
+                android:id="@+id/chrome"
+                android:padding="4dp"
+                android:layout_width="0dp"
+                android:layout_height="60sp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/chrome"/>
+            <ImageView
+                android:padding="4dp"
+android:id="@+id/wiki"
+                android:layout_width="0dp"
+                android:layout_height="60sp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/wiki"/>
+            <ImageView
+                android:padding="4dp"
+android:id="@+id/maps"
+                android:layout_width="0dp"
+                android:layout_height="60sp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/maps"/>
+            <ImageView
+                android:padding="8dp"
+android:id="@+id/directions"
+                android:layout_width="0dp"
+                android:layout_height="60sp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/direction"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:padding="8dp"
+            android:fontFamily="cursive"
+            android:text="info"/>
+    </ScrollView>
+
+</LinearLayout>

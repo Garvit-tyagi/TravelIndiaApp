@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "34269368204",
+    "firebase_url": "https://deltaproject-ff068.firebaseio.com",
+    "project_id": "deltaproject-ff068",
+    "storage_bucket": "deltaproject-ff068.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34269368204:android:ce9134f6acf7399c2850a9",
+        "android_client_info": {
+          "package_name": "com.example.delta_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "34269368204-fjuh3ugs12375l0crb9bg1mo5mgh6vfn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.delta_project",
+            "certificate_hash": "420347d8f03c1a46dec05dca343225725370a4b3"
+          }
+        },
+        {
+          "client_id": "34269368204-t2bd06gi95hsep6mfsor00anhionkq4d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPBmJb_9fUAPVTgDnvphwHAFN3BSypKSY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "34269368204-t2bd06gi95hsep6mfsor00anhionkq4d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
