@@ -60,6 +60,9 @@
             android:text="View All" />
 
     </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="4dp"
         android:paddingTop="4dp"
@@ -67,11 +70,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"/>
-<!--    <ProgressBar-->
-<!--        android:id="@+id/loader"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"/>-->
+    <ProgressBar
+        android:id="@+id/loader"
+        android:layout_centerVertical="true"
+        android:indeterminateTint="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    </RelativeLayout>
     <TextView
         android:layout_width="330dp"
         android:layout_height="wrap_content"

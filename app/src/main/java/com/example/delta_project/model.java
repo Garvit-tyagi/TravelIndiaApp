@@ -1,22 +1,24 @@
 package com.example.delta_project;
 
 public class model {
-    String id, name, url,info;
+    String id, name, url,info,stw;
 
     model() {
 
     }
 
-    public model(String id, String name, String url) {
+    public model(String id, String name, String url,String info) {
         this.id = id;
         this.name = name;
         this.url = url;
+        this.info=info;
 
     }
-    public model( String name, String url) {
+    public model( String name, String url,String info) {
 
         this.name = name;
         this.url = url;
+        this.info=info;
 
     }
 
@@ -51,5 +53,13 @@ public class model {
 
     public void setInfo(String info) {
         this.info = info;
+    }
+
+    public String getStw() {
+        return stw;
+    }
+
+    public void setStw(String stw) {
+        this.stw = stw;
     }
 }

@@ -14,5 +14,8 @@
         <item name="colorPrimaryDark">#000</item>
         <item name="colorAccent">#fff</item>
     </style>
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#000</item>
+    </style>
 
 </resources>

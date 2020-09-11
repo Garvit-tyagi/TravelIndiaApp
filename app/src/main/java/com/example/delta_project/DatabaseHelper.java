@@ -17,7 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String qry="create table tbl_favourites(ID integer primary key autoincrement ,name text, imageurl text)";
+        String qry="create table tbl_favourites(ID integer primary key autoincrement ,name text, imageurl text, info text)";
 
         db.execSQL(qry);
     }
@@ -28,11 +28,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
       onCreate(db);
     }
 
-    public String addRecord(String p1,String p2){
+    public String addRecord(String p1,String p2,String p3){
         SQLiteDatabase db =this.getWritableDatabase();
         ContentValues cv=new ContentValues();
         cv.put("name",p1);
         cv.put("imageurl",p2);
+        cv.put("info",p3);
 
         long res= db.insert("tbl_favourites",null,cv);
         if(res==-1){
@@ -50,5 +51,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete("tbl_favourites", "name" + " =?", new String[]{String.valueOf(model.getName())});
         db.close();
+    }
+    public boolean checkEntry(String name){
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor c=db.rawQuery( "select * from tbl_favourites where name =?",new String[]{name});
+        return  c.getCount() <= 0;
+
     }
 }

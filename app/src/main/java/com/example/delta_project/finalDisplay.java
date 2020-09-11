@@ -39,6 +39,11 @@ String information;
             imageUrl=i.getStringExtra("url");
             finalName=i.getStringExtra("name");
         }
+        else if(i.getStringExtra("from").equals("sliderItem")){
+            information=i.getStringExtra("info");
+            imageUrl=i.getStringExtra(Finalurl);
+            finalName=i.getStringExtra(Finalname);
+        }
         else{
             information="information";
          imageUrl=i.getStringExtra(Finalurl);
@@ -61,7 +66,7 @@ String information;
                Intent i=new Intent(finalDisplay.this,webView.class);
                i.putExtra(Finalname,finalName);
                i.putExtra(Value,"chrome");
-
+              i.putExtra("from","finalDisplay");
                startActivity(i);
             }
         });
@@ -71,6 +76,7 @@ String information;
                 Intent i=new Intent(finalDisplay.this,webView.class);
                 i.putExtra(Finalname,finalName);
                 i.putExtra(Value,"wiki");
+                i.putExtra("from","finalDisplay");
                 startActivity(i);
             }
         });
@@ -81,6 +87,7 @@ String information;
                 i.putExtra(Finalname,finalName);
                 i.putExtra(Finalurl,imageUrl);
                 i.putExtra(Value,"location");
+                i.putExtra("from","finalDisplay");
                 startActivity(i);
             }
         });
@@ -91,6 +98,7 @@ String information;
                 i.putExtra(Finalname,finalName);
                 i.putExtra(Finalurl,imageUrl);
                 i.putExtra(Value,"directions");
+                i.putExtra("from","finalDisplay");
                 startActivity(i);
             }
         });

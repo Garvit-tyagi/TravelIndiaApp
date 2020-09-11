@@ -6,12 +6,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.http.SslCertificate;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +33,8 @@ String middleinformation;
 private ImageView middle_image;
 private RecyclerView middle_rv;
 private Button addfavourites;
+private ProgressBar loader;
+private DatabaseHelper db=new DatabaseHelper(this);
     private FirebaseRecyclerOptions<middleDisplayModel> fro;
 private middleDisplayAdapter ma;
     @Override
@@ -43,7 +47,13 @@ private middleDisplayAdapter ma;
             Log.i(TAG,name);
             imageurl=i.getStringExtra(Dimageurl);
             middleinformation=i.getStringExtra("info");
-        }else{
+        }
+        else if(i.getStringExtra("from").equals("favourites")){
+            name=i.getStringExtra("name");
+            imageurl=i.getStringExtra("imageurl");
+            middleinformation=i.getStringExtra("info");
+        }
+        else{
             name=i.getStringExtra("Dname");
             imageurl=i.getStringExtra("Dimageurl");
             middleinformation=i.getStringExtra("info");
@@ -59,9 +69,10 @@ private middleDisplayAdapter ma;
 
         FirebaseRecyclerOptions<middleDisplayModel> options =
                 new FirebaseRecyclerOptions.Builder<middleDisplayModel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Delhi"), middleDisplayModel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child(name), middleDisplayModel.class)
                         .build();
-
+          loader=findViewById(R.id.loader_middle);
+          loader.setVisibility(View.INVISIBLE);
         middle_rv.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         fro=options;
 
@@ -73,15 +84,22 @@ private middleDisplayAdapter ma;
         addfavourites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addToFavourites(name,imageurl);
+                addToFavourites(name,imageurl,middleinformation);
             }
         });
 
     }
-    void addToFavourites(String n,String i){
-        String res=new DatabaseHelper(this).addRecord(n,i);
-        Log.i(TAG,""+n+i);
-        Toast.makeText(this,res,Toast.LENGTH_SHORT).show();
+    void addToFavourites(String n,String i,String info){
+        Boolean check;
+        check=db.checkEntry(n);
+
+        if(check){
+        String res=db.addRecord(n,i,info);
+        Log.i(TAG,""+n+i+info);
+        Toast.makeText(this,res,Toast.LENGTH_SHORT).show();}
+        else{
+            Toast.makeText(getApplicationContext(),"already added",Toast.LENGTH_SHORT).show();
+        }
 
 
 

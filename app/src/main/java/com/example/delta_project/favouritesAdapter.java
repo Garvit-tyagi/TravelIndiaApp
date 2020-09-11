@@ -53,9 +53,10 @@ public class favouritesAdapter extends RecyclerView.Adapter<favouritesAdapter.Ex
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                AlertDialog.Builder dialog = new AlertDialog.Builder(mcontext);
+                AlertDialog.Builder dialog = new AlertDialog.Builder(mcontext,R.style.AlertDialogTheme);
                 dialog.setTitle("Delete ...");
                 dialog.setMessage("Are you sure you want to delete ?");
+
                 dialog.setIcon(android.R.drawable.ic_menu_delete);
                 dialog.setPositiveButton("Delete",
                         new DialogInterface.OnClickListener() {
